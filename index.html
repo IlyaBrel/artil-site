@@ -29,9 +29,8 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
-body{background:var(--night);color:var(--text);font-family:var(--f-body);font-size:17px;line-height:1.5;padding-bottom:calc(78px + env(safe-area-inset-bottom,0px));-webkit-tap-highlight-color:transparent;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--night)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(74px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--text);font-family:var(--f-body);font-size:17px;line-height:1.5;padding-bottom:calc(78px + env(safe-area-inset-bottom,0px));-webkit-tap-highlight-color:transparent;overflow-x:hidden;overflow-x:clip}
 @media (min-width:901px){body{padding-bottom:0}}
 a{color:inherit}
 img,svg{max-width:100%}
@@ -47,7 +46,7 @@ section{padding-block:56px}
 :focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:8px}
 
 /* progress */
-.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;z-index:45;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--orange),var(--signal))}
+.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;z-index:55;pointer-events:none;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--orange),var(--signal))}
 
 /* buttons */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;border-radius:16px;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:var(--f-body);transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;white-space:nowrap;overflow:hidden;isolation:isolate}
@@ -62,7 +61,8 @@ section{padding-block:56px}
 @keyframes shine{0%,55%{left:-60%}85%,100%{left:130%}}
 
 /* header */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(14,26,43,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,64,98,.7)}
+.top{position:sticky;top:0;z-index:50;background:var(--night);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid var(--line);transition:box-shadow .2s ease}
+.top.is-stuck{box-shadow:0 10px 24px -12px rgba(0,0,0,.75)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .brand-mark{width:40px;height:40px;border-radius:11px;background:var(--signal);display:grid;place-items:center;flex-shrink:0}
@@ -209,7 +209,7 @@ legend{font-weight:700;font-size:15px;margin-bottom:10px;padding:0}
 @media (min-width:600px){.form-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .lblf{display:flex;flex-direction:column;gap:8px;font-weight:700;font-size:15px}
 .form input[type=text],.form select{min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--night-2);color:var(--text);padding:0 14px;font:inherit;font-size:16px;width:100%}
-.form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--signal) 50%),linear-gradient(135deg,var(--signal) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+.form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--signal) 50%),linear-gradient(135deg,var(--signal) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .form .seg label{background:var(--night-2)}
 .form-actions{display:grid;grid-template-columns:1fr;gap:10px}
 @media (min-width:600px){.form-actions{display:flex;flex-wrap:wrap}}
@@ -270,7 +270,7 @@ footer{padding-block:28px 24px}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style>
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<style>body{margin:0}[hidden]{display:none!important}</style>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -680,6 +680,7 @@ const CONFIG = {
   });
 
 })();
+(function(){const t=document.querySelector('.top');if(!t)return;const f=()=>t.classList.toggle('is-stuck',window.scrollY>4);f();window.addEventListener('scroll',f,{passive:true});})();
 </script>
 </body>
 </html>
