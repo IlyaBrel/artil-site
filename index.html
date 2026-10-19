@@ -9,9 +9,9 @@
 <meta property="og:image" content="og.png">
 <meta property="og:locale" content="ru_RU">
 <title>АртИль — работа на фасадах</title>
-<meta name="description" content="АртИль набирает монтажников вентилируемого фасада, фасадчиков, монтажников лоджий, штукатуров и разнорабочих в Москве. До 180 000 ₽ на руки, опыт не важен, проживание, питание и дорога за счёт компании.">
+<meta name="description" content="АртИль срочно набирает монтажников вентилируемого фасада в Москве: 72 белорусских рубля (2 000 российских) за квадратный метр. Также фасадчики, лоджии, штукатуры, разнорабочие. Опыт не важен, проживание, питание и дорога за счёт компании.">
 <meta name="theme-color" content="#0E1A2B">
-<meta property="og:title" content="Фасадные работы в Москве — до 180 000 ₽ на руки">
+<meta property="og:title" content="Вентилируемый фасад в Москве — 72 BYN за квадратный метр">
 <meta property="og:description" content="Опыт не важен — обучим · проживание и питание бесплатно · дорогу оплачиваем · аванс по запросу">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,6 +86,7 @@ section{padding-block:56px}
 @keyframes pulse{50%{opacity:.2;transform:scale(.7)}}
 .hero h1{font-size:clamp(46px,13.6vw,88px);text-transform:uppercase;line-height:.9}
 .hero h1 .y{color:var(--signal);display:block}
+@media (max-width:359px){.btn{font-size:15px;gap:8px;padding:0 12px}.cta-row .btn{padding:0 8px}.btn svg{width:20px;height:20px}.form-actions .btn{white-space:normal;text-align:center;line-height:1.2;padding-block:8px}}
 .money{display:flex;flex-direction:column;gap:2px}
 .money b{font-family:var(--f-display);font-size:clamp(44px,12.5vw,72px);line-height:1;color:var(--signal);font-variant-numeric:tabular-nums;text-shadow:0 0 28px rgba(255,200,20,.35)}
 .money small{font-size:15px;color:var(--muted);font-weight:600}
@@ -110,6 +111,8 @@ section{padding-block:56px}
 @media (max-width:420px){.sticker{width:100px;height:100px}.sticker b{font-size:20px}.sticker small{font-size:11px}}
 @keyframes float{0%,100%{transform:translateY(0) rotate(var(--rot))}50%{transform:translateY(-10px) rotate(var(--rot))}}
 @media (min-width:901px){.sticker{width:140px;height:140px}.sticker b{font-size:30px}.sticker small{font-size:14px}}
+.st-1 b{font-size:18px;white-space:nowrap}
+@media (min-width:901px){.st-1 b{font-size:24px}}
 
 /* tape */
 .tape{position:relative;z-index:2;background:#0B0F17;transform:rotate(-2deg);margin:14px -24px 0;box-shadow:0 12px 26px rgba(0,0,0,.35);overflow:hidden}
@@ -162,6 +165,16 @@ legend{font-weight:700;font-size:15px;margin-bottom:10px;padding:0}
 .calc-out .lbl2{font-family:var(--f-display);font-weight:600;letter-spacing:.12em;font-size:14px;text-transform:uppercase}
 .calc-sum{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,13vw,76px);line-height:1;font-variant-numeric:tabular-nums}
 .calc-note{font-size:14px;font-weight:600;color:var(--ink-2)}
+.range-row{display:flex;align-items:center;gap:14px}
+.range-row output{font-family:var(--f-display);font-weight:700;font-size:28px;color:var(--signal);min-width:78px;text-align:right;font-variant-numeric:tabular-nums}
+.range{-webkit-appearance:none;appearance:none;flex:1;min-width:0;height:44px;background:transparent;cursor:pointer;touch-action:pan-y}
+.range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--signal) var(--p,22%),var(--night-3) var(--p,22%));border:1px solid var(--line)}
+.range::-moz-range-track{height:10px;border-radius:999px;background:var(--night-3);border:1px solid var(--line)}
+.range::-moz-range-progress{height:10px;border-radius:999px;background:var(--signal)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;border-radius:50%;background:var(--signal);border:4px solid var(--ink);box-shadow:0 0 0 2px var(--signal),0 6px 14px rgba(0,0,0,.4)}
+.range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--signal);border:4px solid var(--ink);box-shadow:0 0 0 2px var(--signal)}
+.range:focus-visible{outline:3px solid var(--signal);outline-offset:4px;border-radius:12px}
+.vac-pay .rub{display:block;margin-top:6px;font-family:var(--f-body);font-size:15px;font-weight:800;color:var(--ink)}
 .calc-out .btn{align-self:stretch;background:var(--ink);color:var(--signal);margin-top:6px}
 @media (min-width:801px){.calc-out .btn{align-self:flex-start}}
 
@@ -293,8 +306,8 @@ footer{padding-block:28px 24px}
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="urgent"><i></i>СРОЧНЫЙ НАБОР · МОСКВА</span>
-        <h1>Работа на фасадах <span class="y">в Москве</span></h1>
-        <div class="money"><b data-count="180000" data-prefix="до " data-suffix=" ₽">до 180 000 ₽</b><small>в месяц на руки · разнорабочим 4 000 ₽ в день</small></div>
+        <h1>Вентилируемый фасад <span class="y">в Москве</span></h1>
+        <div class="money"><b data-count="72" data-suffix=" BYN за м²">72 BYN за м²</b><small>это 2 000 российских рублей за квадратный метр · другие профессии — от 5 000 BYN в месяц</small></div>
         <div class="chips">
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Опыт не важен — обучим</span>
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Жильё и питание бесплатно</span>
@@ -308,11 +321,11 @@ footer{padding-block:28px 24px}
       </div>
       <div class="hero-art">
         <img src="scene.svg" width="1080" height="610" alt="Дом в разрезе: фасадчики в люльке монтируют вентилируемый фасад, внутри по этажам идут отделочные работы" fetchpriority="high">
-        <div class="sticker st-1" aria-hidden="true"><small>ПРИВЕДИ<br>ДРУГА</small><b>+5 000 ₽</b><em>за каждого</em></div>
+        <div class="sticker st-1" aria-hidden="true"><small>ПРИВЕДИ<br>ДРУГА</small><b>+180 BYN</b><em>за каждого</em></div>
         <div class="sticker st-2" aria-hidden="true"><small>ОПЫТ<br>НЕ ВАЖЕН</small><b>ОБУЧИМ</b></div>
       </div>
     </div>
-    <div class="tape" aria-hidden="true"><div class="tape-track" id="tape"><div class="tape-group"><span>ОПЫТ НЕ ВАЖЕН — ОБУЧИМ</span><span>ПРОЖИВАНИЕ БЕСПЛАТНО</span><span>ТРЁХРАЗОВОЕ ПИТАНИЕ</span><span>ДОРОГУ ОПЛАЧИВАЕМ</span><span>АВАНС ПО ЗАПРОСУ</span><span>ПРИВЕДИ ДРУГА — 5 000 ₽</span></div><div class="tape-group"><span>ОПЫТ НЕ ВАЖЕН — ОБУЧИМ</span><span>ПРОЖИВАНИЕ БЕСПЛАТНО</span><span>ТРЁХРАЗОВОЕ ПИТАНИЕ</span><span>ДОРОГУ ОПЛАЧИВАЕМ</span><span>АВАНС ПО ЗАПРОСУ</span><span>ПРИВЕДИ ДРУГА — 5 000 ₽</span></div></div></div>
+    <div class="tape" aria-hidden="true"><div class="tape-track" id="tape"><div class="tape-group"><span>ОПЫТ НЕ ВАЖЕН — ОБУЧИМ</span><span>ВЕНТИЛИРУЕМЫЙ ФАСАД — 72 BYN ЗА М²</span><span>ПРОЖИВАНИЕ БЕСПЛАТНО</span><span>ТРЁХРАЗОВОЕ ПИТАНИЕ</span><span>ДОРОГУ ОПЛАЧИВАЕМ</span><span>АВАНС ПО ЗАПРОСУ</span><span>ПРИВЕДИ ДРУГА — 180 BYN</span></div><div class="tape-group"><span>ОПЫТ НЕ ВАЖЕН — ОБУЧИМ</span><span>ВЕНТИЛИРУЕМЫЙ ФАСАД — 72 BYN ЗА М²</span><span>ПРОЖИВАНИЕ БЕСПЛАТНО</span><span>ТРЁХРАЗОВОЕ ПИТАНИЕ</span><span>ДОРОГУ ОПЛАЧИВАЕМ</span><span>АВАНС ПО ЗАПРОСУ</span><span>ПРИВЕДИ ДРУГА — 180 BYN</span></div></div></div>
   </section>
 
   <section id="vacancies">
@@ -320,41 +333,41 @@ footer{padding-block:28px 24px}
       <div class="sec-head rv">
         <span class="eyebrow">Кого ищем</span>
         <h2>Вакансии и зарплаты</h2>
-        <p class="lead">Суммы на руки. Листайте карточки →</p>
+        <p class="lead">Суммы на руки, в белорусских рублях. Листайте карточки →</p>
       </div>
       <div class="rail" id="rail">
         <article class="vac top-pay tilt">
-          <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span class="vac-tag">Топ ставка</span></div>
+          <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span class="vac-tag">Срочно</span></div>
           <h3>Монтажник вентилируемого фасада</h3>
-          <div class="vac-pay"><span data-rate="vent">от 180 000 ₽</span><small>в месяц на руки</small></div>
+          <div class="vac-pay"><span data-m2>72 BYN</span><small>за квадратный метр</small><span class="rub">= 2 000 российских рублей за м²</span></div>
           <ul><li>Монтаж металлической подсистемы</li><li>Утеплитель и ветрозащита</li><li>Монтаж фасадных панелей</li></ul>
           <a class="btn btn-wa" data-wa="Здравствуйте! ХОЧУ НА ВЕНТФАСАД. Опыт: " href="#apply">Откликнуться</a>
         </article>
         <article class="vac top-pay tilt">
           <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 4v16M4 9h4M4 14h4M12 8h5M12 12h5M12 16h5"/></svg></span><span class="vac-tag">Топ ставка</span></div>
           <h3>Фасадчик на утепление</h3>
-          <div class="vac-pay"><span data-rate="uteplenie">от 180 000 ₽</span><small>в месяц на руки</small></div>
+          <div class="vac-pay"><span data-rate="uteplenie">от 6 400 BYN</span><small>в месяц на руки</small></div>
           <ul><li>Плиты минеральной ваты</li><li>Армирующий слой с сеткой</li><li>Декоративная штукатурка и покраска</li></ul>
           <a class="btn btn-wa" data-wa="Здравствуйте! ХОЧУ НА ФАСАД (утепление). Опыт: " href="#apply">Откликнуться</a>
         </article>
         <article class="vac tilt">
           <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9h18v12"/><path d="M3 15h18"/><path d="M7 15v6M12 15v6M17 15v6"/><path d="M6 9V5h12v4"/></svg></span></div>
           <h3>Монтажник фасада лоджий</h3>
-          <div class="vac-pay"><span data-rate="lodzhii">от 160 000 ₽</span><small>в месяц на руки</small></div>
+          <div class="vac-pay"><span data-rate="lodzhii">от 5 700 BYN</span><small>в месяц на руки</small></div>
           <ul><li>Металлический каркас стены лоджии — без сварки</li><li>Потолки: бетоноконтакт, шпаклёвка, фасадная краска</li></ul>
           <a class="btn btn-wa" data-wa="Здравствуйте! ХОЧУ НА ЛОДЖИИ. Опыт: " href="#apply">Откликнуться</a>
         </article>
         <article class="vac tilt">
           <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15l9-9 5 5-9 9H4z"/><path d="M13 6l2-2 5 5-2 2"/></svg></span></div>
           <h3>Штукатур</h3>
-          <div class="vac-pay"><span data-rate="shtuk">от 140 000 ₽</span><small>в месяц на руки</small></div>
+          <div class="vac-pay"><span data-rate="shtuk">от 5 000 BYN</span><small>в месяц на руки</small></div>
           <ul><li>Машинная и ручная штукатурка</li><li>Ровные плоскости по маякам</li></ul>
           <a class="btn btn-wa" data-wa="Здравствуйте! ХОЧУ ШТУКАТУРОМ. Опыт: " href="#apply">Откликнуться</a>
         </article>
         <article class="vac tilt">
           <div class="vac-head"><span class="vac-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC814" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20V10l6-6 6 6v10"/><path d="M10 20v-5h4v5"/></svg></span><span class="vac-tag" style="background:var(--signal);color:var(--ink)">Без опыта</span></div>
           <h3>Разнорабочий</h3>
-          <div class="vac-pay"><span data-daily>4 000 ₽</span><small>в день · 120 000 ₽ за 30 рабочих дней</small></div>
+          <div class="vac-pay"><span data-daily>140 BYN</span><small data-daily30>в день · 4 200 BYN за 30 рабочих дней</small></div>
           <ul><li>Подсобные работы, подача материала</li><li>Можно вырасти до мастера</li></ul>
           <a class="btn btn-wa" data-wa="Здравствуйте! ХОЧУ РАЗНОРАБОЧИМ." href="#apply">Откликнуться</a>
         </article>
@@ -395,10 +408,18 @@ footer{padding-block:28px 24px}
             </div>
             <p class="calc-hint">Вахты 60/20, 30/15, 15/8 · москвичам 5–6 дней в неделю</p>
           </fieldset>
+          <fieldset id="m2-box">
+            <legend>Сколько квадратных метров в смену</legend>
+            <div class="range-row">
+              <input class="range" type="range" id="m2" min="1" max="10" step="1" value="3" aria-describedby="m2-out">
+              <output id="m2-out" for="m2">3 м²</output>
+            </div>
+            <p class="calc-hint">Оплата за каждый смонтированный квадратный метр: 72 BYN (2 000 российских рублей)</p>
+          </fieldset>
         </div>
         <div class="calc-out" aria-live="polite">
           <span class="lbl2">Вы получите на руки</span>
-          <span class="calc-sum" id="calc-sum">от 360 000 ₽</span>
+          <span class="calc-sum" id="calc-sum">12 960 BYN</span>
           <p class="calc-note" id="calc-note">За 60 рабочих дней. Жильё, питание и дорога — за счёт компании, эти деньги остаются у вас.</p>
           <a class="btn" id="calc-cta" href="#apply">Хочу на эту вахту</a>
         </div>
@@ -422,10 +443,10 @@ footer{padding-block:28px 24px}
         <div class="phone-wrap">
           <div class="phone" role="img" aria-label="Пример экрана приложения: заработок за месяц, смены, аванс и бонус за друга">
             <div class="screen">
-              <div class="scr-top"><small>Привет, Алексей · октябрь</small><span style="font-size:12px;font-weight:600">Заработано на руки</span><span class="sum">142 800 ₽</span><div class="bar"><i></i></div><small style="margin-top:6px">22 из 30 смен вахты</small></div>
+              <div class="scr-top"><small>Привет, Алексей · октябрь</small><span style="font-size:12px;font-weight:600">Заработано на руки</span><span class="sum">5 150 BYN</span><div class="bar"><i></i></div><small style="margin-top:6px">22 из 30 смен вахты</small></div>
               <div class="scr-row"><span>Отработано</span><b>22 смены · 220 ч</b></div>
-              <div class="scr-row"><span>Аванс 12 октября</span><b>−20 000 ₽</b></div>
-              <div class="scr-row"><span>Бонус за друга</span><b class="pos">+5 000 ₽</b></div>
+              <div class="scr-row"><span>Аванс 12 октября</span><b>−700 BYN</b></div>
+              <div class="scr-row"><span>Бонус за друга</span><b class="pos">+180 BYN</b></div>
                             <div class="scr-btn">Запросить аванс</div>
             </div>
           </div>
@@ -441,7 +462,7 @@ footer{padding-block:28px 24px}
         <span class="eyebrow">Что мы даём</span>
         <h2>Условия</h2>
       </div>
-      <div class="tiles"><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><b>Обучим с нуля</b><span>и удостоверение</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><b>Проживание</b><span>бесплатно</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v8a3 3 0 0 0 6 0V3"/><path d="M7 3v18"/><path d="M17 3c-2 0-3 3-3 6s1 4 3 4v8"/></svg></span><b>Питание</b><span>3 раза в день</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 7v2M14 11v2M14 15v2"/></svg></span><b>Дорога</b><span>за наш счёт</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7z"/></svg></span><b>Спецодежда</b><span>выдаём</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/></svg></span><b>Аванс</b><span>по запросу</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><b>Вахта</b><span>60/20 · 30/15 · 15/8</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11h6M19 8v6"/></svg></span><b>+5 000 ₽</b><span>за друга</span></div></div>
+      <div class="tiles"><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><b>Обучим с нуля</b><span>и удостоверение</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><b>Проживание</b><span>бесплатно, в вагончиках</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v8a3 3 0 0 0 6 0V3"/><path d="M7 3v18"/><path d="M17 3c-2 0-3 3-3 6s1 4 3 4v8"/></svg></span><b>Питание</b><span>3 раза в день</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 7v2M14 11v2M14 15v2"/></svg></span><b>Дорога</b><span>за наш счёт</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l4 2 4-2 4 4-3 3v11H7V10L4 7z"/></svg></span><b>Спецодежда</b><span>выдаём</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/></svg></span><b>Аванс</b><span>по запросу</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><b>Вахта</b><span>60/20 · 30/15 · 15/8</span></div><div class="tile"><span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0E1A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11h6M19 8v6"/></svg></span><b>+180 BYN</b><span>за друга</span></div></div>
     </div>
   </section>
 
@@ -503,11 +524,12 @@ footer{padding-block:28px 24px}
         <h2>Ответы до переписки</h2>
       </div>
       <div class="faq">
-        <details><summary>Нужен ли опыт?</summary><p>Нет. Обучим прямо на объекте и поможем получить удостоверение по профессии. Без опыта можно начать разнорабочим — 4 000 рублей в день — и вырасти до мастера.</p></details>
+        <details><summary>Нужен ли опыт?</summary><p>Нет. Обучим прямо на объекте и поможем получить удостоверение по профессии. Без опыта можно начать разнорабочим — 140 белорусских рублей в день — и вырасти до мастера.</p></details>
         <details><summary>Как получить аванс?</summary><p>Аванс выдаём по вашему запросу. Каждый аванс сразу виден в приложении вместе с заработком и бонусами.</p></details>
-        <details><summary>Где жить на вахте?</summary><p>Проживание бесплатное, за счёт компании. Перед выездом пришлём фото жилья.</p></details>
+        <details><summary>Где жить на вахте?</summary><p>Бесплатно, в вагончиках, за счёт компании. Перед выездом пришлём фото.</p></details>
         <details><summary>Кто платит за дорогу?</summary><p>Компания. Дорогу до объекта оплачиваем, спецодежду выдаём.</p></details>
         <details><summary>Какие нужны документы?</summary><p>Паспорт, СНИЛС и ИНН. Иностранным гражданам — документы на право работы в России; список уточните у Евгении.</p></details>
+        <details><summary>В какой валюте указаны суммы?</summary><p>Все суммы на сайте — в белорусских рублях, на руки. Монтаж вентилируемого фасада — 72 белорусских рубля за квадратный метр, это 2 000 российских рублей.</p></details>
         <details><summary>Почему нельзя позвонить?</summary><p>Мы отвечаем только в WhatsApp и Telegram — так быстрее и ничего не теряется. Можно отправлять голосовые сообщения.</p></details>
       </div>
     </div>
@@ -534,8 +556,12 @@ const CONFIG = {
   wa:      '201042724906',        // номер WhatsApp только цифрами, с кодом страны
   waText:  '+20 104 272 4906',
   tgNick:  'kocurevgenia',        // ник в Telegram без @
-  rates: { vent: 180000, uteplenie: 180000, lodzhii: 160000, shtuk: 140000 }, // ₽ в месяц на руки
-  daily: 4000                     // ₽ в день, разнорабочий
+  cur:     'BYN',                 // валюта на сайте
+  m2:      72,                    // вентилируемый фасад: BYN за квадратный метр (= 2 000 российских рублей)
+  m2Default: 3,                   // калькулятор: квадратных метров в смену по умолчанию
+  rates: { uteplenie: 6400, lodzhii: 5700, shtuk: 5000 }, // BYN в месяц на руки
+  daily: 140,                     // BYN в день, разнорабочий
+  friend: 180                     // BYN за приведённого друга
 };
 /* ========================================================================== */
 
@@ -543,7 +569,7 @@ const CONFIG = {
   'use strict';
   const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   const num = n => Math.round(n).toLocaleString('ru-RU').replace(/[  ,]/g, ' ');
-  const money = n => num(n) + ' ₽';
+  const money = n => num(n) + ' ' + CONFIG.cur;
   const waLink = text => 'https://wa.me/' + CONFIG.wa + '?text=' + encodeURIComponent(text);
   const tgLink = () => 'https://t.me/' + CONFIG.tgNick;
   const ext = a => { a.target = '_blank'; a.rel = 'noopener'; };
@@ -558,6 +584,8 @@ const CONFIG = {
   });
   $$('[data-rate]').forEach(el => { el.textContent = 'от ' + money(CONFIG.rates[el.dataset.rate]); });
   $$('[data-daily]').forEach(el => { el.textContent = money(CONFIG.daily); });
+  $$('[data-daily30]').forEach(el => { el.textContent = 'в день · ' + money(CONFIG.daily * 30) + ' за 30 рабочих дней'; });
+  $$('[data-m2]').forEach(el => { el.textContent = money(CONFIG.m2); });
   $$('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); ext(a); });
   $$('[data-tg]').forEach(a => { a.href = tgLink(); ext(a); });
 
@@ -574,6 +602,17 @@ const CONFIG = {
   }
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
+
+  /* заголовок: уменьшаем шрифт, пока самое длинное слово не влезет в ширину экрана */
+  const h1 = $('.hero h1');
+  function fitH1() {
+    if (!h1) return; h1.style.fontSize = '';
+    let fs = parseFloat(getComputedStyle(h1).fontSize), i = 0;
+    while (h1.scrollWidth > h1.clientWidth + 1 && fs > 24 && i++ < 60) { fs -= 1; h1.style.fontSize = fs + 'px'; }
+  }
+  fitH1();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitH1);
+  addEventListener('resize', fitH1, { passive: true });
 
   /* лента: постоянная скорость, бесшовный повтор */
   const tape = $('#tape');
@@ -637,7 +676,9 @@ const CONFIG = {
   /* калькулятор */
   const profWord = { vent: 'НА ВЕНТФАСАД', uteplenie: 'НА ФАСАД (утепление)', lodzhii: 'НА ЛОДЖИИ', shtuk: 'ШТУКАТУРОМ', daily: 'РАЗНОРАБОЧИМ' };
   const sumEl = $('#calc-sum');
-  let shown = 360000, anim = 0;
+  let shown = 0, anim = 0;
+  const m2 = $('#m2'), m2Out = $('#m2-out'), m2Box = $('#m2-box');
+  if (m2) m2.value = CONFIG.m2Default;
   function animateSum(to, pre) {
     cancelAnimationFrame(anim);
     if (reduced) { shown = to; sumEl.textContent = pre + money(to); return; }
@@ -650,12 +691,17 @@ const CONFIG = {
   }
   function calc() {
     const p = $('input[name=cp]:checked').value, d = +$('input[name=cd]:checked').value;
-    const sum = p === 'daily' ? CONFIG.daily * d : CONFIG.rates[p] * d / 30;
-    animateSum(sum, p === 'daily' ? '' : 'от ');
-    $('#calc-note').textContent = 'За ' + d + ' рабочих дней. Жильё, питание и дорога — за счёт компании, эти деньги остаются у вас.';
+    const isVent = p === 'vent', q = +m2.value;
+    m2Box.hidden = !isVent;
+    m2Out.textContent = q + ' м²';
+    m2.style.setProperty('--p', ((q - m2.min) / (m2.max - m2.min) * 100) + '%');
+    const sum = isVent ? CONFIG.m2 * q * d : p === 'daily' ? CONFIG.daily * d : CONFIG.rates[p] * d / 30;
+    animateSum(sum, (isVent || p === 'daily') ? '' : 'от ');
+    $('#calc-note').textContent = (isVent ? q + ' м² в смену × ' + d + ' смен × ' + money(CONFIG.m2) + '. ' : 'За ' + d + ' рабочих дней. ') + 'Жильё, питание и дорога — за счёт компании, эти деньги остаются у вас.';
     const cta = $('#calc-cta'); cta.href = waLink('Здравствуйте! ХОЧУ ' + profWord[p] + ', вахта ' + d + ' дней. Опыт: '); ext(cta);
   }
   $$('input[name=cp], input[name=cd]').forEach(i => i.addEventListener('change', calc));
+  m2.addEventListener('input', calc);
   calc();
 
   /* анкета → WhatsApp */
